@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio Identification System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <div class="container">
+
+    <div class="left-section">
+      <div class="badge">
+        <span class="dot"></span>
+        Real-Time Audio Identification
+      </div>
+
+      <h1>
+        Detect Songs
+        <span>Instantly</span>
+      </h1>
+
+      <p class="description">
+        Upload a short audio snippet and identify songs using advanced
+        fingerprinting and fuzzy matching.
+      </p>
+
+      <div class="features">
+        <div class="feature-card">
+          <h2>3-10s</h2>
+          <p>Short snippet detection</p>
+        </div>
+
+        <div class="feature-card">
+          <h2>Fuzzy</h2>
+          <p>Noise robust matching</p>
+        </div>
+
+        <div class="feature-card">
+          <h2>Fast</h2>
+          <p>Real-time retrieval</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-section">
+
+      <div class="upload-card">
+
+        <div class="card-header">
+          <div>
+            <h2>Upload Audio</h2>
+            <p>WAV and MP3 supported</p>
+          </div>
+
+          <button id="refreshHealth">Refresh</button>
+        </div>
+
+        <div id="dropArea" class="drop-area">
+
+          <input type="file" id="fileInput" accept="audio/*" hidden />
+
+          <div class="upload-icon">
+            🎵
+          </div>
+
+          <h3>Drag & Drop Audio</h3>
+          <p>or click to browse</p>
+
+          <div id="selectedFile" class="selected-file hidden"></div>
+
+        </div>
+
+        <button id="identifyBtn" class="identify-btn">
+          Identify Song
+        </button>
+
+        <div id="loading" class="loading hidden">
+          <div class="spinner"></div>
+          Processing Audio...
+        </div>
+
+        <div id="errorBox" class="error-box hidden"></div>
+
+        <div id="resultBox" class="result-box hidden">
+
+          <div class="result-header">
+            <div>
+              <h2>Match Found</h2>
+              <p>Identification completed</p>
+            </div>
+
+            <div class="success-icon">
+              ✓
+            </div>
+          </div>
+
+          <div class="song-card">
+            <p>Song</p>
+            <h1 id="songTitle">-</h1>
+          </div>
+
+          <div class="result-grid">
+
+            <div class="mini-card">
+              <p>Artist</p>
+              <h3 id="artistName">-</h3>
+            </div>
+
+            <div class="mini-card">
+              <p>Confidence</p>
+              <h3 id="confidenceText">-</h3>
+            </div>
+
+          </div>
+
+          <div class="progress-section">
+            <div class="progress-labels">
+              <span>Match Strength</span>
+              <span id="confidencePercent">0%</span>
+            </div>
+
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="latency">
+            <span>Latency</span>
+            <span id="latencyText">0s</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="health-card">
+
+        <div class="health-header">
+          <h2>System Health</h2>
+          <div id="healthStatus" class="health-status">
+            Healthy
+          </div>
+        </div>
+
+        <div class="health-grid">
+
+          <div class="health-mini-card">
+            <p>Songs Indexed</p>
+            <h1 id="songsIndexed">0</h1>
+          </div>
+
+          <div class="health-mini-card">
+            <p>Fingerprints</p>
+            <h1 id="fingerprints">0</h1>
+          </div>
+
+        </div>
+
+        <div class="health-details">
+          <div>
+            <span>Dataset Loaded</span>
+            <span id="datasetLoaded">No</span>
+          </div>
+
+          <div>
+            <span>Index Ready</span>
+            <span id="indexReady">No</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
